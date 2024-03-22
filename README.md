@@ -2,7 +2,7 @@
 
 ## Bug
 
-When using the chat-bison models, we can return the chat session history in the API response body, and
+When using the chat-bison models, we can return the chat session history in the response body, and
 accept it in the request body with success using a list of `ChatMessage`, which is the history data
 structure used for those models. However, when we try this using Gemini, there is an error stating
 that the `Content` object, which is the history data structure for Gemini models, is not JSON
