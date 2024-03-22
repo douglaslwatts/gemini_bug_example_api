@@ -45,8 +45,11 @@ parts {
 ]
 127.0.0.1 - - [22/Mar/2024 08:59:13] "POST /api/v1/chat-message HTTP/1.1" 200 -
 ```
-9. In `api/model/chat_request.py`:<br>Uncomment lines 16, 17, 27 and 28<br>
-   In `api/controller/chat_controller.py`:<br>Uncomment lines 51 and 61<br>comment out lines 52 and 62
+9. In `api/model/chat_request.py`:<br>
+   &nbsp;&nbsp;&nbsp;&nbsp;Uncomment lines 16, 17, 27 and 28<br>
+   In `api/controller/chat_controller.py`:<br>
+   &nbsp;&nbsp;&nbsp;&nbsp;Uncomment lines 51 and 61<br>
+   &nbsp;&nbsp;&nbsp;&nbsp;comment out lines 52 and 62
 10. Send the same request again and see the `Content` object still printed out but with the below error
 ```
  * Detected change in 'gemini_bug_example_api/api/controller/chat_controller.py', reloading
