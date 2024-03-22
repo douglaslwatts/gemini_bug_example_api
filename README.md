@@ -1,6 +1,6 @@
 # gemini_bug_example_api
 
-## Setup
+## Bug Repro Instructions
 
 1. Create a service acount JSON credentials file and place it in the root of the project with the
    name `vertex_creds.json`. The `GOOGLE_APPLICATION_CREDENTIALS` environment variable already
@@ -11,6 +11,7 @@
 5. `pip3 install -r requirements.txt`
 6. `flask run --reload`
 7. Send a request to http://localhost:5000/api/v1/chat-message with the following request body
+   using your favorite tool such as Insomia, Postman, curl, etc.
 
 ```
 {
@@ -36,8 +37,8 @@ parts {
 ]
 127.0.0.1 - - [22/Mar/2024 08:59:13] "POST /api/v1/chat-message HTTP/1.1" 200 -
 ```
-9. In `api/model/chat_request.py`: Uncomment lines 27 and 28
-   In `api/controller/chat_controller.py`: Uncomment lines 51 and 61
+9. In `api/model/chat_request.py`: Uncomment lines 27 and 28<br>
+   In `api/controller/chat_controller.py`: Uncomment lines 51 and 61<br>
                                            comment out lines 52 and 62
 10. Send the same request again and see the Content object still printed out but with the below error
 ```
