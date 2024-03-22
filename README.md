@@ -1,5 +1,24 @@
 # gemini_bug_example_api
 
+## Setup
+
+1. Create a service acount JSON credentials file and place it in the root of the project with the
+   name `vertex_creds.json`. The `GOOGLE_APPLICATION_CREDENTIALS` environment variable already
+   points to this file name/location in the `.env` file.
+2. Ensure that you are using Python 3.12.2 (`Python -V` -> `Python 3.12.2`)
+3. `python -m venv venv`
+4. `source venv/bin/activate`
+5. `pip3 install -r requirements.txt`
+6. `flask run --reload`
+7. Send a request to http://localhost:5000/api/v1/chat-message with the following request body
+
+```
+{
+    "prompt": "How high do eagles fly?"
+}
+```
+8. See successful response, and Content object printed to console as below
+
 ```
  * Debug mode: off
 WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
@@ -16,10 +35,11 @@ parts {
 }
 ]
 127.0.0.1 - - [22/Mar/2024 08:59:13] "POST /api/v1/chat-message HTTP/1.1" 200 -
-
 ```
-
-
+9. In `api/model/chat_request.py`: Uncomment lines 27 and 28
+   In `api/controller/chat_controller.py`: Uncomment lines 51 and 61
+                                           comment out lines 52 and 62
+10. Send the same request again and see the Content object still printed out but with the below error
 ```
  * Detected change in 'gemini_bug_example_api/api/controller/chat_controller.py', reloading
  * Restarting with stat
