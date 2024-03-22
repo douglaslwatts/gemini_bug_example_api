@@ -1,5 +1,12 @@
 # gemini_bug_example_api
 
+## Context
+
+When using the chat-bison models, we can do this exactly with success using a list of `ChatMessage`,
+which is the history data structure used for those models. However, when we try this using Gemini,
+there is an error stating that the `Content` object, which is the history data structure for Gemini models,
+is not JSON serializable.
+
 ## Bug Repro Instructions
 
 1. Create a service acount JSON credentials file and place it in the root of the project with the
