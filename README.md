@@ -1,6 +1,6 @@
 # gemini_bug_example_api
 
-## Context
+## Bug
 
 When using the chat-bison models, we can do this exactly with success using a list of `ChatMessage`,
 which is the history data structure used for those models. However, when we try this using Gemini,
