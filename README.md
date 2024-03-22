@@ -18,7 +18,7 @@
     "prompt": "How high do eagles fly?"
 }
 ```
-8. See successful response, and Content object printed to console as below
+8. See successful response, and `Content` object printed to console as below
 
 ```
  * Debug mode: off
@@ -37,10 +37,9 @@ parts {
 ]
 127.0.0.1 - - [22/Mar/2024 08:59:13] "POST /api/v1/chat-message HTTP/1.1" 200 -
 ```
-9. In `api/model/chat_request.py`: Uncomment lines 27 and 28<br>
-   In `api/controller/chat_controller.py`: Uncomment lines 51 and 61<br>
-                                           comment out lines 52 and 62
-10. Send the same request again and see the Content object still printed out but with the below error
+9. In `api/model/chat_request.py`:<br>Uncomment lines 16, 17, 27 and 28<br>
+   In `api/controller/chat_controller.py`:<br>Uncomment lines 51 and 61<br>comment out lines 52 and 62
+10. Send the same request again and see the `Content` object still printed out but with the below error
 ```
  * Detected change in 'gemini_bug_example_api/api/controller/chat_controller.py', reloading
  * Restarting with stat
@@ -90,4 +89,8 @@ Traceback (most recent call last):
 TypeError: Object of type Content is not JSON serializable
 127.0.0.1 - - [22/Mar/2024 09:04:03] "POST /api/v1/chat-message HTTP/1.1" 500 -
 ```
+The above demonstrates the bug for attempting to return the history in the response. Ideally, we
+will also be able to take that exact history which is returned, and send it in a subsequent request
+in the optional `history` field in the request model. However, this does not work as the same bug
+applies there as well.
 
