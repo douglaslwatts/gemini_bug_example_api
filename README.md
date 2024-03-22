@@ -8,10 +8,10 @@ structure used for those models. However, when we try this using Gemini, there i
 that the `Content` object, which is the history data structure for Gemini models, is not JSON
 serializable.
 
-The intention is that the caller is another application and the chat history is stored there. If any
-further conversation with the chat history is needed, then that history can be passed in subsequent
+The intention is that the caller is another application and the chat history is stored/managed there.
+ If any further conversation with the chat history is needed, then that history can be passed in subsequent
 requests. This is working in a real world application using the chat-bison 32K model but the plan is
-to change over to using the Gemini Pro model once this bug is fixed.
+to change over to using the Gemini Pro model.
 
 ## Bug Repro Instructions
 
