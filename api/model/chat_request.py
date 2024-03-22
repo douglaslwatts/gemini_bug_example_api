@@ -26,3 +26,4 @@ class ChatResponse(BaseModel):
 
     # history: list[Content] = Field(None,
     #                                description='AI chat history')
+

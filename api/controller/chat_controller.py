@@ -60,3 +60,4 @@ class ChatController:
 
         # return ChatResponse(response=response_message, history=conversation.history).model_dump()
         return ChatResponse(response=response_message).model_dump()
+
