@@ -13,7 +13,7 @@ serializable.
 1. Create a service acount JSON credentials file and place it in the root of the project with the
    name `vertex_creds.json`. The `GOOGLE_APPLICATION_CREDENTIALS` environment variable already
    points to this file name/location in the `.env` file.
-2. Ensure that you are using Python 3.12.2 (`Python -V` -> `Python 3.12.2`)
+2. Ensure that you are using Python 3.12.2 (`python -V` -> `Python 3.12.2`)
 3. `python -m venv venv`
 4. `source venv/bin/activate`
 5. `pip3 install -r requirements.txt`
